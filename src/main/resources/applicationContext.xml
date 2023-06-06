@@ -10,17 +10,20 @@
     <context:property-placeholder location="classpath:musicPlayer.properties" />
 
     <bean id="musicBean"
-          class="ru.mishkin.group.ClassicalMusic">
+          class="ru.mishkin.group.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
     </bean>
 
-    <bean id="musicPlayer"
-          class="ru.mishkin.group.MusicPlayer">
-        <property name="musica" ref="musicBean"/>
-<!--        <constructor-arg ref="musicBean"/>-->
-<!--        <property name="name" value=""/>-->
-<!--        <property name="volume" value="50"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.mishkin.group.MusicPlayer"-->
+
+<!--        <property name="musica" ref="musicBean"/>-->
+<!--&lt;!&ndash;        <constructor-arg ref="musicBean"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="name" value=""/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="50"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
 </beans>
